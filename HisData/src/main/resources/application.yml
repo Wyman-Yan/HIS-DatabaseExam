@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    # 连接池:据说最好的-阿里的
+    url: jdbc:mysql://127.0.0.1:3306/his?characterEncoding=utf8&serverTimezone=UTC
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 980924
+    # 最大空闲值.当经过一个高峰时间后，连接池可以慢慢将已经用不到的连接慢慢释放一部分，一直减少到maxIdle为止
+    max-active: 1000
+    # 最小空闲值.当空闲的连接数少于阀值时，连接池就会预申请去一些连接，以免洪峰来时来不及申请。
+    min-idle: 10
+    # 最大等待值
+    max-wait: 60000
+  jpa:
+    database: MySQL
+    show-sql: true
+    hibernate:
+      naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
